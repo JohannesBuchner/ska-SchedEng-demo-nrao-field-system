@@ -1,0 +1,277 @@
+                    SUMMARY FILE FOR PROJECT: pipexx  
+
+COVER INFORMATION: 
+
+  Experiment: We observe something!
+  Exp. Code:  pipexx  
+  Start Day  87 is Mon  28 Mar 2011   MJD  55648          
+
+  Schedule Version:       1.00
+  Processed by SCHED version:   9.40  Release Jan. 13, 2011.
+
+  PI:       Johannes Buchner
+
+  Address:  What
+            ever
+            man
+   
+
+  Phone:    bla
+  EMAIL:    jbuchner@aut.ac.nz
+  Fax:      bla
+  Phone during observation: bla
+
+  Observing mode: 128-4-2
+
+  Notes:
+   
+   
+   
+
+
+No cover letter provided.
+
+CORRELATION REQUESTS (Defaults in parentheses):
+
+  Correlator (Required if recording):          SOCORRO    (VLBA DiFX software correlator)
+  Correlator average time (2 sec):               2.000 sec.
+    Alternate average time (for spacecraft).     0.000 sec.
+  Output spectral channels per baseband (16):          16
+     Correlator FFT size (128):                       128
+  Number of antennas to be correlated:                 10
+  Polarization (ON):                           OFF
+  Correlator weighting function (UNIFORM):     UNIFORM
+  Distribution tape (DAT):                     DAT
+
+  Source positions from:
+  FROM .SUM FILE ONLY
+  Shipping address for correlator output:
+      jwrobel aoc mail box / x7392
+
+
+
+
+  Correlator Notes:
+
+
+
+
+
+
+
+DERIVED INFORMATION FOR CORRELATION: 
+
+  Elapsed time for project:          0.08 hours.
+  Total time in scheduled scans:     0.08 hours.
+  Total time in recording scans:     0.08 hours.
+  Total number of baseline hours:    0.08    (Recording scans only)
+  Projected maximum data output rate from the correlator:       0.3 kbytes/sec of observe time.
+  Projected correlator output data set size:           0.1 Mbytes
+  NOTE:  Above numbers assume the same correlator parameters are used for all data.
+
+
+
+STATIONS USED IN SCHEDULE:
+
+   Station  Code   Latitude Longitude Elevation       X            Y            Z       Axis
+                                                                                       Offset
+
+   WARKWRTH  Ww  -36.43000 174.66000     132.   -5115616.047  -478163.694 -3766765.967  0.010
+
+
+   Plate tectonic motion adjustments for MJD  55648
+   Station  Code      Station motions (m/yr)             Adjusted positions 
+                     X       Y       Z     MJD0        X            Y            Z 
+   WARKWRTH  Ww   0.0000  0.0000  0.0000      0  -5115616.047  -478163.694 -3766765.967
+
+
+RECORDING SYSTEM AND CALIBRATION INFORMATION:
+
+  DISKS - Stations potentially recording on disks.
+   Station    Drive type   DAR     NBBC    Tsys
+   WARKWRTH     MARK5A     VLBA      8     CONT
+
+
+
+
+EXPERIMENT SUMMARY:
+  Number of input scans:          1
+  Number of scans scheduled:      1
+  Number of stations:             1
+  Number of sources input:        1
+  Number of setup files used:     1
+
+
+ Station summaries (disk stations): 
+  Station  Control   Scans   Scan   Record  Record   Gbytes     Formatter       Sync 
+                            Hours   Hours   Scans              Reconfigures    Hours  
+  WARKWRTH   NONE       1    0.08    0.08       1        5.        0/  0        0.00
+
+Notes on the station summaries: 
+
+    "Record Scans" are periods of recording with no gap.  The Mark5A disk systems 
+    have a limit of 1024 such scans.  There are often multiple projects on a disk pack.
+    Try to keep above about 6 GB per record scan by using MINPAUSE and PRESTART 
+    to prevent short gaps.  However, also try to prevent record scans of more than
+    an hour to minimize risk to data from playback problems.
+
+    "Sync Hours" is on-source, in-scan time lost during correlation to resyncing
+    recordings.  Resyncs follow tape stoppages and formatter reconfigures.
+
+    For VLBA DAR stations, total reconfigures and reconfigures during recording are shown.
+    Reconfigures during recording can cause slow correlator sync.
+    Any reconfigure can slow sync at JIVE.
+
+    Recording started before scan start time     1 times.  See PRESTART and MINPAUSE.
+    They may have been kept running through short scan gaps.
+    The number can be large because each station/scan combination counts.
+
+
+
+
+
+ Setup file: /home/user/Downloads/sched/setups/v4cm-128-4-2.set
+   Matching groups in /home/user/Downloads/sched/catalogs/freq.dat:
+     ww              Warkworth - xband
+
+   Setup group:    1         Station: WARKWRTH          Total bit rate:  128
+   Format: VLBA1:2           Bits per sample: 2         Sample rate: 16.000
+   Number of channels:  4    DBE type:                  Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   7500.00   7500.00   7500.00   7500.00
+   Net SB=         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        A         C         A         C 
+
+  The following frequency sets based on this setup were used.
+
+   Frequency Set:   1  Setup file default.  Used pcal sets:   1
+   LO sum=    8413.49   8413.49   8421.49   8421.49
+   BBC fr=     913.49    913.49    921.49    921.49
+   Bandwd=      8.000     8.000     8.000     8.000
+
+  The following pulse cal sets were used with this setup:
+
+   Pulse cal detection set:   1  PCAL = 1MHZ
+    PCALXB1=   S1    S3    S1    S3    S1    S2    S3    S4 
+    PCALXB2=   S2    S4    S2    S4    M1    M2    M3    M4 
+    PCALFR1=   510   510  6510  6510     0     0     0     0
+    PCALFR2=   510   510  6510  6510     0     0     0     0
+
+   Track assignments are: 
+    track1=   2, 10, 18, 26
+    barrel=roll_off 
+
+
+ SUMMARY for experiment pipexx  We observe something!                                                   
+     Flags: D=>Down, H=>Below Horizon, R=>Rises, S=>Sets, W=>Slew too long, t=>Tape Chg.
+     Top item is:    Average elevation.
+     Bottom item is: Seconds antenna is on source during scan. 0 shown if down, rise, or set
+     TYPE top: -=> normal scan, P=>Pointing or Ta;  bottom: -=>recording, N=>not recording.
+     Day  87 is Mon  28 Mar 2011   MJD  55648          
+
+SCAN  DAY START UT  SOURCE     TYPE  STATIONS    t => tape change
+           STOP UT                    Ww
+
+   1   87 09:36:00 NGC3603       -    64
+       87 09:41:00 v4cm-128-4-2  -   300
+
+
+
+ TIME RANGE OF RECORDINGS and TOTAL BYTES:
+
+                Obs. start time.     Obs. end time.      Total 
+ Station          Day    Time         Day    Time        GBytes
+                     (UT)                 (UT)
+  WARKWRTH        87  09:36:00        87  09:41:00          4.9
+
+ SOURCES USED IN RECORDING SCANS --                         We observe something!
+     Catalog positions marked with *. 
+     Precession of date coordinates is based on stop time of first scan.
+     Names used in schedule marked with *. 
+     Short names used in VLA and SNAP files marked with +. 
+     Observation date used in B1950/J2000 coordinate conversion (PRECDATE):  1979.900
+     No adjustments are made for rates (DRA, DDEC).
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+   J1115-6116        11 12 59.479330   * 11 15 09.100000     11 15 41.709657       0.10
+ * NGC3603          -60 59 54.66377    *-61 16 17.00000     -61 20 13.68574        0.10
+                     From catalog imbedded in main SCHED input file.
+                     NGC 3603 is a beautiful circumpolar HII region
+                        0.083 scan and      0.000 baseline hours in setup: s/sched/setups/v4cm-128-4-2.set
+
+
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   NGC3603            120.0
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+
+
+ Source separations in degrees for pairs closer than  30.00 degrees.
+
+
+
+
+
+
+ J2000 coordinates formatted for possible transfer to the correlator data base:
+name = 'NGC3603'  ra = 11h15m09.100000s  dec = -61d16'17.00000"
+
+
+ Correlation blocks required by setup changes. 
+
+UTTIMERANGE 2011MAR28 at 09:36:00 to 2011MAR28 at 09:41:00
+
+
+Catalogs: 
+  Station:   /home/user/Downloads/sched/catalogs/stations.dat
+                 Version:  2010Dec29-17:51:05
+  Location:  /home/user/Downloads/sched/catalogs/locations.dat
+                 Version:  Not known
+  Frequency: /home/user/Downloads/sched/catalogs/freq.dat
+                 Version:  2010Dec29-17:51:05
+  Source:   /home/user/Downloads/sched/catalogs/sources.vlba
+                 Version:   ---
+  Source2:  NONE
+                 Version:   ---
+
+
+Other external files: 
+  Ephemeris: NONE
+  PEAKFILE:  /home/user/Downloads/sched/catalogs/peak.cmd
+  MSGFILE:   /home/user/Downloads/sched/catalogs/messages.txt
+
+
+Code versions: 
+  Release version:            9.40  Release Jan. 13, 2011.
+  Version of VEX standard:   1.50
+  Version of VEX code:       0.87
+  Version of plot code:      1.06
+  Version of ephemeris code: 1.01
+  Version of PGPLOT:        v5.2.2
+
+This schedule produced on: Mon Mar 28 22:21:26 2011

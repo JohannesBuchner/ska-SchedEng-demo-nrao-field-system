@@ -1,0 +1,7 @@
+SchedulingEngine demo interface for controlling NRAO field system
+==================================================================
+
+This project provides scripts to interact with SCHED from the NRAO field system to demonstrate that the SchedulingEngine can be used in a closed control loop with telecope control systems. The NRAO field system is a common control system in radio telescopes.
+
+Code in the SchedulingEngine project (demo) uses the scripts stored here.
+

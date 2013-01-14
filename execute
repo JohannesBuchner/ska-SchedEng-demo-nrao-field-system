@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ssh -p10023 jbuchner@localhost ./execute.sh
+

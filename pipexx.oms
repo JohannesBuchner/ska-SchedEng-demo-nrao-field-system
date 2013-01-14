@@ -1,0 +1,84 @@
+
+No cover letter provided.
+
+BEGIN = PROJECT_INFO
+
+    PROJECT_CODE       = pipexx  
+    TITLE              = We observe something!
+    PI_NAME            = Johannes Buchner
+    PI_ADDRESS         = What
+    PI_ADDRESS         = ever
+    PI_ADDRESS         = man
+    PI_PHONE           = bla
+    PI_OBS_PHONE       = bla
+    PI_EMAIL           = jbuchner@aut.ac.nz
+    PI_FAX             = bla
+    START              = 2011-087/09:36:00
+    STOP               = 2011-087/09:41:00
+    CORRELATOR         = SOCORRO
+
+END = PROJECT_INFO
+
+
+BEGIN = STATION_SETUP
+
+    STATION            = Ww 
+    RECORD_SCANS       =    1
+    RECORD_HOURS       =   0.08
+    FE                 =   omit  omit
+    NUM_CHANNELS       =    4
+    FORMAT             = VLBA1:2 
+    SPEEDUP            =  1.00
+    IF                 =  A  C  A  C   
+    BBC_SB             =  U  U  U  U   
+    NET_SB             =  U  U  U  U   
+    POL                =  R  L  R  L   
+
+    BEGIN = FREQUENCY_SET
+
+        LO_SUM         =    8413.49   8413.49   8421.49   8421.49
+        BBC_FREQUENCY  =     913.49    913.49    921.49    921.49
+        BANDWIDTH      =      8.000     8.000     8.000     8.000
+
+    END = FREQUENCY_SET
+
+END = STATION_SETUP
+
+BEGIN = STATION_INFO
+
+    STATION_ID         = WW 
+    STATION_NAME       = WARKWRTH
+    TAPES              =   0
+    PASSES             =    0
+    DISK               =     4.9
+    START              = 2011-087/09:36:00
+    STOP               = 2011-087/09:41:00
+
+END = STATION_INFO
+
+
+BEGIN = SOURCE_INFO
+
+    SOURCE_NAME       = NGC3603
+    CAL_CODE          = V
+    SOURCE_RA         = 11h15m09.100000s
+    SOURCE_DEC        = -61d16'17.00000"
+
+END = SOURCE_INFO
+
+BEGIN = CORRELATOR_PARAMETERS
+
+    POLARIZATION      = NO 
+    TIME_AVERAGE      =    2.000000
+    TWEAK_INT_TIME    = YES 
+    FFT_SIZE          =      256
+    SPECTRAL_AVERAGE  =    8
+    WINDOW            = UNIFORM         
+    OUTPUT_TAPE       = DAT             
+    SHIPPING          = jwrobel aoc mail box / x7392
+    DATA_OUTPUT_RATE  =     0.26
+    DATA_SET_SIZE     =      0.1
+    SOURCE_POS_ORIGIN = FROM .SUM FILE ONLY
+
+END = CORRELATOR_PARAMETERS
+

@@ -1,0 +1,53 @@
+export SCHED=/home/user/Downloads/sched/
+
+KEYFILE=$1
+PREFIX="pipexx"
+
+cd /tmp/
+
+rm -f ${PREFIX}.{flag,oms,sum,v2d,vex} ${PREFIX}{crd,sch}.*
+
+echo "creating SCHED input file from template"
+
+# ACTIVESTATIONS -- antennas affected/allocated
+# TIMEREFERENCESTATION -- LST reference station
+# STARTTIME -- this is in LST
+# STARTDAY  -- this is the LST day
+
+time=$( date -u +%T)
+time=$(date -u +%H):$((15+$(date -u +%M|sed s,^0,,g))):00
+#day=$(python jd.py $(date +%s))
+day=$(  date -u +%d)
+month=$(date -u +%m)
+year=$( date -u +%Y)
+
+shift
+#STATION=MK
+#STATION=Ww
+STATION="$1"
+
+m4 \
+	-DEXPCODE=${PREFIX} \
+	-DACTIVESTATIONS="${STATION}" \
+	-DTIMEREFERENCESTATION=WARKWRTH \
+	-DSTARTTIME="${time}" \
+	-DSTARTMONTH="${month}" \
+	-DSTARTYEAR="${year}" \
+	-DSTARTDAY="${day}" \
+	< $KEYFILE > ${PREFIX}.sched
+
+echo "running SCHED"
+
+$SCHED/bin/sched < ${PREFIX}.sched > sched.out || exit 1
+# my.flag my.oms my.sum my.v2d my.vex
+# mycrd.*
+# mysch.*
+
+echo "running drudge"
+
+# now we have individual schedule files
+# I guess we drudg and load
+ssh -p10023 jbuchner@localhost ./rundrudge.sh < ${PREFIX}.vex || exit 2
+
+
+

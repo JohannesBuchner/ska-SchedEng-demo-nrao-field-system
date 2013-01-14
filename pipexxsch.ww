@@ -1,0 +1,131 @@
+  COVER INFORMATION 
+
+ Station:    WARKWRTH  (Code Ww ) 
+ Experiment: We observe something!
+ Exp. Code:  pipexx  
+
+
+Schedule Version:       1.00
+Processed by SCHED version:   9.40  Release Jan. 13, 2011.
+
+PI:       Johannes Buchner
+
+Address:  What
+          ever
+          man
+ 
+
+Phone:    bla
+EMAIL:    jbuchner@aut.ac.nz
+Fax:      bla
+Phone during observation: bla
+
+Observing mode: 128-4-2
+
+Notes:
+ 
+ 
+ 
+
+Schedule for WARKWRTH  (Code Ww )                                   Page   2
+               We observe something!
+  UP:  D => Below limits;  H => Below horizon mask;  W => still slewing at end;  blank => Up.
+  Early: Seconds between end of slew and start.   Dwell: On source seconds. 
+  Disk: GBytes recorded to this point.
+  TPStart:  Recording start time.  Frequencies are LO sum (band edge).
+  SYNC: Time correlator is expected to sync up.
+----------------------------------------------------------------------------------------
+Start UT  Source               Start / Stop                 Early    Disk   TPStart
+Stop UT                  LST      EL    AZ   HA  UP   ParA  Dwell   GBytes    SYNC
+----------------------------------------------------------------------------------------
+
+ --- Mon  28 Mar 2011   Day  87 ---
+
+ Next scan frequencies:  8413.49  8413.49  8421.49  8421.49
+ Next BBC frequencies:    913.49   913.49   921.49   921.49
+ Next scan bandwidths:      8.00     8.00     8.00     8.00
+
+09 36 00  NGC3603      10 19 12  63.6 164.8 -0.9     -26.2     0        0   09 35 55
+09 41 00  ---          10 24 13  63.8 166.0 -0.9     -24.0   300        5   09 35 55
+
+
+SETUP FILE INFORMATION:
+   NOTE: If DOPPLER, FREQ, or BW were used, see the individual scans for the final BBC settings.
+
+
+ Setup file: /home/user/Downloads/sched/setups/v4cm-128-4-2.set
+   Matching groups in /home/user/Downloads/sched/catalogs/freq.dat:
+     ww              Warkworth - xband
+
+   Setup group:    1         Station: WARKWRTH          Total bit rate:  128
+   Format: VLBA1:2           Bits per sample: 2         Sample rate: 16.000
+   Number of channels:  4    DBE type:                  Speedup factor:   1.00
+
+   Disk used to record data.
+
+   1st LO=   7500.00   7500.00   7500.00   7500.00
+   Net SB=         U         U         U         U
+   Pol.  =      RCP       LCP       RCP       LCP 
+   BBC   =         1         2         3         4
+   BBC SB=         U         U         U         U
+   IF    =        A         C         A         C 
+
+  The following frequency sets based on this setup were used.
+
+   Frequency Set:   1  Setup file default.  Used pcal sets:   1
+   LO sum=    8413.49   8413.49   8421.49   8421.49
+   BBC fr=     913.49    913.49    921.49    921.49
+   Bandwd=      8.000     8.000     8.000     8.000
+
+  The following pulse cal sets were used with this setup:
+
+   Pulse cal detection set:   1  PCAL = 1MHZ
+    PCALXB1=   S1    S3    S1    S3    S1    S2    S3    S4 
+    PCALXB2=   S2    S4    S2    S4    M1    M2    M3    M4 
+    PCALFR1=   510   510  6510  6510     0     0     0     0
+    PCALFR2=   510   510  6510  6510     0     0     0     0
+
+   Track assignments are: 
+    track1=   2, 10, 18, 26
+    barrel=roll_off 
+ SOURCES USED IN RECORDING SCANS --                         We observe something!
+     Catalog positions marked with *. 
+     Precession of date coordinates is based on stop time of first scan.
+     Names used in schedule marked with *. 
+     Short names used in VLA and SNAP files marked with +. 
+     Observation date used in B1950/J2000 coordinate conversion (PRECDATE):  1979.900
+     No adjustments are made for rates (DRA, DDEC).
+     Scan hours are for recording scans only. 
+     Baseline hours are only counted for scans above horizon at both ends.
+
+   Source                         Source position (RA/Dec)                        Error
+                        (B1950)             (J2000)             (Date)            (mas)
+
+   J1115-6116        11 12 59.479330   * 11 15 09.100000     11 15 41.709657       0.10
+ * NGC3603          -60 59 54.66377    *-61 16 17.00000     -61 20 13.68574        0.10
+                     From catalog imbedded in main SCHED input file.
+                     NGC 3603 is a beautiful circumpolar HII region
+                        0.083 scan and      0.000 baseline hours in setup: s/sched/setups/v4cm-128-4-2.set
+
+
+
+  The solar corona can cause unstable phases for sources too close to the Sun.
+  SCHED provides warnings at individual scans for distances less than 10 degrees.
+  The distance from the Sun to each source in this schedule is:
+    Source         Sun distance (deg) 
+   NGC3603            120.0
+
+  Barry Clark estimates from predictions by Ketan Desai of IPM scattering sizes 
+  that the Sun will cause amplitude reductions on the  longest VLBA baselines 
+  at a solar distance of 60deg F^(-0.6) where F is in GHz. 
+  For common VLBI bands, this is: 
+       327 MHz        117. deg 
+       610 MHz         81. deg 
+       1.6 GHz         45. deg 
+       2.3 GHz         36. deg 
+       5.0 GHz         23. deg 
+       8.4 GHz         17. deg 
+      15.0 GHz         12. deg 
+      22.0 GHz          9. deg 
+      43.0 GHz          6. deg 
+

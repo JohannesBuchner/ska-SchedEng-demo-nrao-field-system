@@ -1,0 +1,30 @@
+
+    Welcome to program SCHED.  Version:   9.40  Release Jan. 13, 2011.
+
+The manual is at http://www.aoc.nrao.edu/software/sched/index.html
+Unix users should set $SCHED to the base area where SCHED is installed.
+Most run time messages will be in sched.runlog
+
+Some useful commands to give now if running interactively:
+   SCHedule=<filename>    :  Specify input file.
+   PLOT                   :  Invokes uv, xy, rd, and uptime plotting.
+   FREQLIST=lowF,highF    :  Make frequency list (MHz).  Then exit.
+   EXIT                   :  Leave program.
+   /                      :  End of inputs - run program (or EXIT).
+
+SRREAD:  Reading source catalog:  Program_input
+STREAD:  Reading station catalog: Program_input
+STREAD:  Reading locations file:  NOLOC
+STREAD:  Reading station catalog: /home/user/Downloads/sched/catalogs/stations.dat
+STREAD:  Reading locations file:  /home/user/Downloads/sched/catalogs/locations.dat
+RDSET:   Reading setup file:      /home/user/Downloads/sched/setups/v4cm-128-4-2.set
+GETFREQ: Reading frequency file:  /home/user/Downloads/sched/catalogs/freq.dat
+INPUT:   Found     1 input scans.
+SCHOPT:  First output scan will be number     1
+SCHOPT:  There will be     1 output scans (    1 -     1) from  87/09:36:00 to  87/09:41:00
+SUMOPE:  Writing summary file pipexx.sum
+OMSOUT:  Writing OMS file pipexx.oms
+VXWRT :  Writing  V E X  file pipexx.vex
+V2DOUT:  Writing V2D file pipexx.v2d
+FLAGS:   Writing apriori flagging file pipexx.flag
+ Processing WARKWRTH

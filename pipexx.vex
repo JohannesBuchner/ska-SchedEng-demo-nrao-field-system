@@ -1,0 +1,215 @@
+VEX_rev = 1.5;
+*    SCHED vers: Release Jan. 13, 2011.
+*    VEX/SCHED:  1.5.87
+*    Other versions: Sched:   9.4  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = pipexx;
+*                                                      +------------+
+*                         PI revision number:          |    1.0000  |
+*                                                      +------------+
+*    mode:       128-4-2
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def pipexx;
+     exper_name = pipexx;
+     exper_description = "We observe something!";
+     PI_name = "Johannes Buchner";
+     PI_email = jbuchner@aut.ac.nz;
+*    address:   What
+*               ever
+*               man
+*                
+*    phone:     bla
+*    during obs:bla
+*    fax:       bla
+*
+*    year, doy: 2011,  87
+*    date     : Mon 28 Mar 2011
+*    MJD      : 55648
+     exper_nominal_start=2011y087d09h36m00s;
+     exper_nominal_stop=2011y087d09h41m00s;
+*
+     target_correlator = SOCORRO;
+*
+*    integr_time    :     2.000 s
+*    number_channels:    16
+*    number_antenna : 10
+*    cross_polarize : No
+*    weight_func    : UNIFORM
+*    distrib_medium : DAT
+*    source_pos_cat : FROM .SUM FILE ONLY
+*    distribute_to  : 
+*                     jwrobel aoc mail box / x7392
+*
+enddef;
+*------------------------------------------------------------------------------
+$MODE;
+*
+def v4cm-128-4-2;
+     ref $PROCEDURES = Mode_01;
+     ref $FREQ = 8413.49MHz4x8MHz:Ww;
+     ref $IF = LO@7500MHzDPolTone/1:Ww;
+     ref $BBC = 4BBCs:Ww;
+     ref $TRACKS = VLBA.4Ch2bit1to2:Ww;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ww;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = UsbDetect:Ww;
+enddef;
+*------------------------------------------------------------------------------
+$STATION;
+*
+def Ww;
+     ref $SITE = WARKWRTH;
+     ref $ANTENNA = WARKWRTH;
+     ref $DAS = 2VLBA+NONE<Mark5A;
+enddef;
+*------------------------------------------------------------------------------
+$PROCEDURES;
+*
+def Mode_01;
+     procedure_name_prefix =  "01";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*------------------------------------------------------------------------------
+$SITE;
+*
+def WARKWRTH;
+     site_type = fixed;
+     site_name = WARKWRTH;
+     site_ID = Ww;
+*    elev=  132.00 long= 174:39:36. lat=-36:25:48.0
+     site_position =-5115616.04668 m: -478163.69437 m:-3766765.96672 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 1858y322d;
+     site_position_epoch =       0;
+enddef;
+*------------------------------------------------------------------------------
+$ANTENNA;
+*
+def WARKWRTH;
+     axis_type = az : el;
+     antenna_motion = el :1000.0 deg/min :  6 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :1000.0 deg/min :  6 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.01000 m;
+enddef;
+*------------------------------------------------------------------------------
+$DAS;
+*
+def 2VLBA+NONE<Mark5A;
+     record_transport_type = Mark5A;
+     electronics_rack_type = VLBA;
+     number_drives = 2;
+     headstack = 1 :            : 0 ;
+     headstack = 2 :            : 1 ;
+     tape_motion = adaptive : 0 min: 0 min: 10 sec;
+enddef;
+*------------------------------------------------------------------------------
+$SOURCE;
+*
+def NGC3603;
+     source_name = NGC3603;
+*    this source had calibrator code: V
+*    alternate source name: J1115-6116
+*    NGC 3603 is a beautiful circumpolar HII region
+     ra = 11h15m09.1000000s; dec = -61d16'17.000000"; ref_coord_frame = J2000;
+*    ra = 11h12m59.4793299s; dec = -60d59'54.663767"; ref_coord_frame = B1950;
+*    ra = 11h15m41.7096567s; dec = -61d20'13.685741"; ref_coord_frame = Date;
+enddef;
+*------------------------------------------------------------------------------
+$FREQ;
+*
+def 8413.49MHz4x8MHz;
+* mode =  1    stations =Ww
+     sample_rate =  16.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  8413.49 MHz : U :   8.00 MHz : &CH01 : &BBC01 : &U_Cal; *Rcp
+     chan_def = :  8413.49 MHz : U :   8.00 MHz : &CH02 : &BBC02 : &U_Cal; *Lcp
+     chan_def = :  8421.49 MHz : U :   8.00 MHz : &CH03 : &BBC03 : &U_Cal; *Rcp
+     chan_def = :  8421.49 MHz : U :   8.00 MHz : &CH04 : &BBC04 : &U_Cal; *Lcp
+enddef;
+*------------------------------------------------------------------------------
+$IF;
+*
+def LO@7500MHzDPolTone/1;
+* mode =  1    stations =Ww
+     if_def = &IF_A : A : R :  7500.0 MHz : U : 1 MHz ;
+     if_def = &IF_C : C : L :  7500.0 MHz : U : 1 MHz ;
+enddef;
+*------------------------------------------------------------------------------
+$BBC;
+*
+def 4BBCs;
+* mode =  1    stations =Ww
+     BBC_assign = &BBC01 :  1 : &IF_A;
+     BBC_assign = &BBC02 :  2 : &IF_C;
+     BBC_assign = &BBC03 :  3 : &IF_A;
+     BBC_assign = &BBC04 :  4 : &IF_C;
+enddef;
+*------------------------------------------------------------------------------
+$PHASE_CAL_DETECT;
+*
+def UsbDetect;
+* mode =  1    stations =Ww
+     phase_cal_detect = &U_Cal : 1 : 8 : 0;
+enddef;
+*------------------------------------------------------------------------------
+$TRACKS;
+*
+def VLBA.4Ch2bit1to2;
+* mode =  1    stations =Ww
+*    format = VLBA1:2, and fan-out = 2
+*    mode requires   8.00Mb/s/tr; stations using disks
+     track_frame_format = VLBA;
+     data_modulation = on;
+     fanout_def =   : &CH01 : sign : 1:  2:  4;
+     fanout_def =   : &CH01 :  mag : 1:  6:  8;
+     fanout_def =   : &CH02 : sign : 1: 10: 12;
+     fanout_def =   : &CH02 :  mag : 1: 14: 16;
+     fanout_def =   : &CH03 : sign : 1: 18: 20;
+     fanout_def =   : &CH03 :  mag : 1: 22: 24;
+     fanout_def =   : &CH04 : sign : 1: 26: 28;
+     fanout_def =   : &CH04 :  mag : 1: 30: 32;
+enddef;
+*------------------------------------------------------------------------------
+$HEAD_POS;
+def DiskVoid;
+* mode =  1    stations =Ww
+*     Head positions irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$PASS_ORDER;
+*
+def DiskVoid;
+* mode =  1    stations =Ww
+*     Pass orders irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$ROLL;
+*
+def NoRoll;
+* mode =  1    stations =Ww
+*    barrel-roll set to 'roll_off', so reverse-roll by  0 (1 head)
+     roll = off;
+enddef;
+*------------------------------------------------------------------------------
+$SCHED;
+* schedule section for experiment pipexx  
+* We observe something!                                                   
+scan No0001;
+*    start=2011y087d09h36m00s <= original start, modified for tape start.
+     start=2011y087d09h35m55s; mode=v4cm-128-4-2; source=NGC3603;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Ww:    5 sec:  305 sec:    0.000 GB:   :       : 1;
+endscan;
